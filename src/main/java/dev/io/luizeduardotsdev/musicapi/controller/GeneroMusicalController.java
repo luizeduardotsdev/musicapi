@@ -34,4 +34,9 @@ public class GeneroMusicalController {
     public Optional<GeneroMusical> listarPorId(@PathVariable Long id){
         return service.listarPorId(id);
     }
+
+    @DeleteMapping("/{id}")
+    public void deletarPorId(@PathVariable Long id){
+        service.deletar(id);
+    }
 }
