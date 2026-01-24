@@ -4,6 +4,8 @@ import dev.io.luizeduardotsdev.musicapi.genero.GeneroMusical;
 import dev.io.luizeduardotsdev.musicapi.repository.GeneroMusicalRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class GeneroMusicalService {
 
@@ -15,5 +17,9 @@ public class GeneroMusicalService {
 
     public void criar(GeneroMusical genero){
         generoMusicalRepository.save(genero);
+    }
+
+    public List<GeneroMusical> listar(){
+        return generoMusicalRepository.findAll();
     }
 }
