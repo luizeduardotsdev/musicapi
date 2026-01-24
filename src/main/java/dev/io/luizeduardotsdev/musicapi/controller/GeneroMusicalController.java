@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/genero")
@@ -27,5 +28,10 @@ public class GeneroMusicalController {
     @GetMapping
     public List<GeneroMusical> listar(){
         return service.listar();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<GeneroMusical> listarPorId(@PathVariable Long id){
+        return service.listarPorId(id);
     }
 }
