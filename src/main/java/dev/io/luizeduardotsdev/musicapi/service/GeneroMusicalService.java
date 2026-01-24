@@ -27,4 +27,8 @@ public class GeneroMusicalService {
     public Optional<GeneroMusical> listarPorId(Long id){
         return generoMusicalRepository.findById(id);
     }
+
+    public void deletar(Long id){
+        generoMusicalRepository.deleteById(id);
+    }
 }
