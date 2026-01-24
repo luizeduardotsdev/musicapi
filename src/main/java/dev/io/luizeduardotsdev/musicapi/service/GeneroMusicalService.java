@@ -5,6 +5,7 @@ import dev.io.luizeduardotsdev.musicapi.repository.GeneroMusicalRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GeneroMusicalService {
@@ -21,5 +22,9 @@ public class GeneroMusicalService {
 
     public List<GeneroMusical> listar(){
         return generoMusicalRepository.findAll();
+    }
+
+    public Optional<GeneroMusical> listarPorId(Long id){
+        return generoMusicalRepository.findById(id);
     }
 }
