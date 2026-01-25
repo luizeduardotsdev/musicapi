@@ -1,4 +1,4 @@
-package dev.io.luizeduardotsdev.musicapi.genero;
+package dev.io.luizeduardotsdev.musicapi.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
