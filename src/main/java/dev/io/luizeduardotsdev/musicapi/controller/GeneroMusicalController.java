@@ -1,6 +1,7 @@
 package dev.io.luizeduardotsdev.musicapi.controller;
 
-import dev.io.luizeduardotsdev.musicapi.genero.GeneroMusical;
+import dev.io.luizeduardotsdev.musicapi.domain.GeneroMusical;
+import dev.io.luizeduardotsdev.musicapi.mapper.GeneroMusicalMapper;
 import dev.io.luizeduardotsdev.musicapi.service.GeneroMusicalService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +15,12 @@ import java.util.Optional;
 public class GeneroMusicalController {
 
     private final GeneroMusicalService service;
+    private final GeneroMusicalMapper mapper;
 
-    public GeneroMusicalController(GeneroMusicalService service) {
+
+    public GeneroMusicalController(GeneroMusicalService service, GeneroMusicalMapper mapper) {
         this.service = service;
+        this.mapper = mapper;
     }
 
     @PostMapping
