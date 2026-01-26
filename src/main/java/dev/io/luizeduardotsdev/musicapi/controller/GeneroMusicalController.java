@@ -1,5 +1,6 @@
 package dev.io.luizeduardotsdev.musicapi.controller;
 
+import dev.io.luizeduardotsdev.musicapi.controller.dto.GeneroMusicalRequest;
 import dev.io.luizeduardotsdev.musicapi.domain.GeneroMusical;
 import dev.io.luizeduardotsdev.musicapi.mapper.GeneroMusicalMapper;
 import dev.io.luizeduardotsdev.musicapi.service.GeneroMusicalService;
@@ -24,8 +25,8 @@ public class GeneroMusicalController {
     }
 
     @PostMapping
-    public ResponseEntity criar(@RequestBody GeneroMusical generoMusical){
-        service.criar(generoMusical);
+    public ResponseEntity criar(@RequestBody GeneroMusicalRequest request){
+        service.criar(mapper.toEntity(request));
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
