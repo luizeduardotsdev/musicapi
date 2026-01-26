@@ -39,8 +39,9 @@ public class GeneroMusicalController {
     }
 
     @GetMapping("/{id}")
-    public Optional<GeneroMusical> listarPorId(@PathVariable Long id){
-        return service.listarPorId(id);
+    public Optional<GeneroMusicalResponse> listarPorId(@PathVariable Long id){
+        Optional<GeneroMusical> generoOptional = service.listarPorId(id);
+        return generoOptional.map(mapper::toResponse);
     }
 
     @DeleteMapping("/{id}")
