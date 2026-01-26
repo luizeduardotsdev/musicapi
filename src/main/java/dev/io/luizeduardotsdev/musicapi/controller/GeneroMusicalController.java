@@ -1,6 +1,7 @@
 package dev.io.luizeduardotsdev.musicapi.controller;
 
 import dev.io.luizeduardotsdev.musicapi.controller.dto.GeneroMusicalRequest;
+import dev.io.luizeduardotsdev.musicapi.controller.dto.GeneroMusicalResponse;
 import dev.io.luizeduardotsdev.musicapi.domain.GeneroMusical;
 import dev.io.luizeduardotsdev.musicapi.mapper.GeneroMusicalMapper;
 import dev.io.luizeduardotsdev.musicapi.service.GeneroMusicalService;
@@ -31,8 +32,10 @@ public class GeneroMusicalController {
     }
 
     @GetMapping
-    public List<GeneroMusical> listar(){
-        return service.listar();
+    public List<GeneroMusicalResponse> listar(){
+        List<GeneroMusical> listar = service.listar();
+        return listar.stream()
+                .map(mapper::toResponse).toList();
     }
 
     @GetMapping("/{id}")
