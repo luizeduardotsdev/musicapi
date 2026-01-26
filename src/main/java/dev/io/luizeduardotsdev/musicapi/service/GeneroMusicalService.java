@@ -1,6 +1,6 @@
 package dev.io.luizeduardotsdev.musicapi.service;
 
-import dev.io.luizeduardotsdev.musicapi.genero.GeneroMusical;
+import dev.io.luizeduardotsdev.musicapi.domain.GeneroMusical;
 import dev.io.luizeduardotsdev.musicapi.repository.GeneroMusicalRepository;
 import org.springframework.stereotype.Service;
 
