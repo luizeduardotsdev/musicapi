@@ -26,26 +26,27 @@ public class GeneroMusicalController {
     }
 
     @PostMapping
-    public ResponseEntity criar(@RequestBody GeneroMusicalRequest request){
+    public ResponseEntity<Void> criar(@RequestBody GeneroMusicalRequest request){
         service.criar(mapper.toEntity(request));
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping
-    public List<GeneroMusicalResponse> listar(){
+    public ResponseEntity<List<GeneroMusicalResponse>> listar(){
         List<GeneroMusical> listar = service.listar();
-        return listar.stream()
-                .map(mapper::toResponse).toList();
+        return ResponseEntity.ok().body(listar.stream()
+                .map(mapper::toResponse).toList());
     }
 
     @GetMapping("/{id}")
-    public Optional<GeneroMusicalResponse> listarPorId(@PathVariable Long id){
+    public ResponseEntity<Optional<GeneroMusicalResponse>> listarPorId(@PathVariable Long id){
         Optional<GeneroMusical> generoOptional = service.listarPorId(id);
-        return generoOptional.map(mapper::toResponse);
+         return ResponseEntity.ok().body(generoOptional.map(mapper::toResponse));
     }
 
     @DeleteMapping("/{id}")
-    public void deletarPorId(@PathVariable Long id){
+    public ResponseEntity<Void> deletarPorId(@PathVariable Long id){
         service.deletar(id);
+        return ResponseEntity.noContent().build();
     }
 }
