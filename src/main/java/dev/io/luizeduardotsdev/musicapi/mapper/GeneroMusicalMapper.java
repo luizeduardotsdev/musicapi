@@ -1,7 +1,7 @@
 package dev.io.luizeduardotsdev.musicapi.mapper;
 
-import dev.io.luizeduardotsdev.musicapi.controller.dto.GeneroMusicalRequest;
-import dev.io.luizeduardotsdev.musicapi.controller.dto.GeneroMusicalResponse;
+import dev.io.luizeduardotsdev.musicapi.controller.dto.request.GeneroMusicalRequest;
+import dev.io.luizeduardotsdev.musicapi.controller.dto.response.GeneroMusicalResponse;
 import dev.io.luizeduardotsdev.musicapi.domain.GeneroMusical;
 import org.springframework.stereotype.Component;
 

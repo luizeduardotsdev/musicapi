@@ -1,7 +1,7 @@
 package dev.io.luizeduardotsdev.musicapi.controller;
 
-import dev.io.luizeduardotsdev.musicapi.controller.dto.GeneroMusicalRequest;
-import dev.io.luizeduardotsdev.musicapi.controller.dto.GeneroMusicalResponse;
+import dev.io.luizeduardotsdev.musicapi.controller.dto.request.GeneroMusicalRequest;
+import dev.io.luizeduardotsdev.musicapi.controller.dto.response.GeneroMusicalResponse;
 import dev.io.luizeduardotsdev.musicapi.domain.GeneroMusical;
 import dev.io.luizeduardotsdev.musicapi.mapper.GeneroMusicalMapper;
 import dev.io.luizeduardotsdev.musicapi.service.GeneroMusicalService;
